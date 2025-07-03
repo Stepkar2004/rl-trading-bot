@@ -42,4 +42,19 @@ This project implements a cryptocurrency trading bot using a Deep Q-Network (DQN
 
 The trading bot's performance is evaluated on the test set. The following plots show the portfolio value, rewards, and actions taken by the bot over time.
 
-*(You can add the generated plots here)*
+![Training Performance](results.png)
+*Caption: The plot above shows the portfolio value of the agent during one of the training runs. The extreme returns are a clear indicator of overfitting.*
+
+### Analysis and Future Work
+
+The model demonstrates a high return on the training data, indicating that it has learned the patterns present in the training set effectively. However, the performance on the test set, while positive, is significantly lower. This suggests that the model is overfitting to the training data and may not generalize well to new, unseen data.
+
+The "crazy returns" observed during training are likely a result of this overfitting. The model has essentially "memorized" the optimal trades for the historical data it was trained on.
+
+To improve the model's generalization and create a more robust trading bot, the following steps could be taken:
+
+*   **Regularization:** Introduce regularization techniques like L1/L2 regularization or dropout to the neural network to prevent it from becoming too complex.
+*   **More Data:** Train the model on a larger and more diverse dataset, potentially including different market conditions.
+*   **Feature Selection:** Experiment with different combinations of technical indicators to find the most predictive features.
+*   **Hyperparameter Tuning:** Optimize the DQN's hyperparameters (e.g., learning rate, discount factor, exploration-exploitation schedule) using techniques like grid search or Bayesian optimization.
+*   **Walk-Forward Validation:** Implement a more robust backtesting strategy like walk-forward validation to get a more realistic estimate of the model's performance on unseen data.
