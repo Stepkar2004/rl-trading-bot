@@ -1,0 +1,9 @@
+pandas
+requests
+stable_baselines3
+gymnasium
+gym_trading_env
+numpy
+plotly
+scikit-learn
+torch
