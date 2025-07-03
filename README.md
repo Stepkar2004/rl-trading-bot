@@ -40,16 +40,19 @@ This project implements a cryptocurrency trading bot using a Deep Q-Network (DQN
 
 ## Results
 
-The trading bot's performance is evaluated on the test set. The following plots show the portfolio value, rewards, and actions taken by the bot over time.
+The trading bot's performance is evaluated on the test set. On a portion of the test data, the bot achieved the following result:
+
+*   **Market Return:** 15.38%
+*   **Portfolio Return:** 5.80%
 
 ![Training Performance](results.png)
-*Caption: The plot above shows the portfolio value of the agent during one of the training runs. The extreme returns are a clear indicator of overfitting.*
+*Caption: The plot above shows the portfolio value of the agent during one of the training runs. The extreme returns are a clear indicator of overfitting, as the model has essentially memorized the training data.*
 
 ### Analysis and Future Work
 
-The model demonstrates a high return on the training data, indicating that it has learned the patterns present in the training set effectively. However, the performance on the test set, while positive, is significantly lower. This suggests that the model is overfitting to the training data and may not generalize well to new, unseen data.
+The model demonstrates an extremely high, unrealistic return on the training data, as seen in the plot above. However, the performance on the test set is significantly lower (a 5.80% portfolio return compared to a 15.38% market return). This stark contrast confirms that the model is **overfitting** to the training data and does not generalize well to new, unseen data.
 
-The "crazy returns" observed during training are likely a result of this overfitting. The model has essentially "memorized" the optimal trades for the historical data it was trained on.
+The "crazy returns" observed during training are a direct result of this overfitting. The model has essentially "memorized" the optimal trades for the historical data it was trained on, a common pitfall in financial modeling.
 
 To improve the model's generalization and create a more robust trading bot, the following steps could be taken:
 
